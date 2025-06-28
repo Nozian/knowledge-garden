@@ -1,0 +1,84 @@
+[
+  {
+    "id": "test-conversation-1",
+    "title": "プログラミング学習について",
+    "create_time": 1703980800,
+    "mapping": {
+      "msg1": {
+        "message": {
+          "role": "user",
+          "content": {
+            "content_type": "text",
+            "parts": ["JavaScriptの基本的な概念について教えてください。変数、関数、オブジェクトの違いを知りたいです。"]
+          },
+          "create_time": 1703980800
+        }
+      },
+      "msg2": {
+        "message": {
+          "role": "assistant",
+          "content": {
+            "content_type": "text",
+            "parts": ["JavaScriptの基本概念について説明します。\n\n**変数（Variables）**\nデータを格納するための容器です。let、const、varで宣言できます。\n\n**関数（Functions）**\n特定の処理をまとめたコードブロックです。再利用可能で、引数を受け取り値を返すことができます。\n\n**オブジェクト（Objects）**\nプロパティとメソッドを持つデータ構造です。実世界のものをモデル化するのに適しています。"]
+          },
+          "create_time": 1703980860
+        }
+      }
+    }
+  },
+  {
+    "id": "test-conversation-2", 
+    "title": "料理のレシピ相談",
+    "create_time": 1703984400,
+    "mapping": {
+      "msg3": {
+        "message": {
+          "role": "user",
+          "content": {
+            "content_type": "text",
+            "parts": ["簡単にできるパスタのレシピを教えてください。初心者でも作れるものがいいです。"]
+          },
+          "create_time": 1703984400
+        }
+      },
+      "msg4": {
+        "message": {
+          "role": "assistant",
+          "content": {
+            "content_type": "text",
+            "parts": ["初心者向けの簡単パスタレシピをご紹介します。\n\n**ペペロンチーノ**\n材料：\n- スパゲッティ 100g\n- にんにく 2片\n- オリーブオイル 大さじ3\n- 唐辛子 1本\n- 塩・黒胡椒 適量\n\n作り方：\n1. パスタを茹でる\n2. フライパンでにんにくと唐辛子を炒める\n3. 茹で上がったパスタを加えて混ぜる\n4. 塩胡椒で味を調える\n\n約15分で完成する簡単レシピです！"]
+          },
+          "create_time": 1703984460
+        }
+      }
+    }
+  },
+  {
+    "id": "test-conversation-3",
+    "title": "AI技術の将来性",
+    "create_time": 1703988000,
+    "mapping": {
+      "msg5": {
+        "message": {
+          "role": "user",
+          "content": {
+            "content_type": "text",
+            "parts": ["AI技術の発展により、将来どのような職業が影響を受けると思いますか？プログラマーの仕事はどうなるでしょうか？"]
+          },
+          "create_time": 1703988000
+        }
+      },
+      "msg6": {
+        "message": {
+          "role": "assistant",
+          "content": {
+            "content_type": "text",
+            "parts": ["AI技術の発展が職業に与える影響について考察します。\n\n**影響を受けやすい職業：**\n- データ入力作業\n- 単純な事務処理\n- 定型的な翻訳業務\n- 基本的な画像・動画編集\n\n**プログラマーの将来：**\nプログラマーの仕事は完全になくなることはないでしょう。むしろ：\n- AIツールを活用したより高度な開発\n- システム設計やアーキテクチャの重要性増加\n- AI自体の開発・改善への需要拡大\n\nプログラマーはAIと協働することで、より創造的で複雑な問題解決に集中できるようになると予想されます。"]
+          },
+          "create_time": 1703988060
+        }
+      }
+    }
+  }
+]
+
