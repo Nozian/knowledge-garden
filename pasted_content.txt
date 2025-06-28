@@ -1,0 +1,129 @@
+承知いたしました。Cursorの能力を最大限に引き出し、このプロジェクトをスムーズに開始するための、より詳細で具体的な手順とプロンプトを提供します。これをコピー＆ペーストしていくだけで、開発の土台が完成します。
+
+【事前準備】
+
+PCの好きな場所に、ai-knowledge-gardenという名前のフォルダを作成します。
+
+そのフォルダを、Cursorエディタで開きます。
+
+ステップ１：プロジェクトの憲法（README.md）の作成とAIへの読ませ込み
+
+Cursorの左側のファイルエクスプローラーで、ai-knowledge-gardenフォルダ内にREADME.mdという名前の新しいファイルを作成します。
+
+作成したREADME.mdファイルに、以下のテキストをそのままコピー＆ペーストしてください。
+
+Generated markdown
+# Project Name: AI-Knowledge-Garden (v0.1)
+
+## 1. Project Goal
+This project aims to develop a local web application that enables cross-platform search and browsing of past conversation logs from multiple AI chat services (ChatGPT, Claude, Gemini). The primary objective is to build a personal "Second Brain," facilitating the reuse of past ideas and knowledge.
+
+## 2. Core Vision
+- **Cross-Platform Search**: Search through logs from different AI services without platform boundaries.
+- **Data Normalization**: Convert log data from various formats into a unified, common structure.
+- **Local-First Privacy**: Ensure all processing is done within the user's browser, guaranteeing privacy.
+- **Long-Term Ambition**: Eventually, implement RAG (Retrieval-Augmented Generation) technology to query the entire log history as context for new AI interactions.
+
+## 3. Initial Milestone (v0.1 Target)
+"Create a local web page that allows for keyword searches across chat logs exported from ChatGPT, Claude, and Gemini over the past six months."
+
+---
+This project originated from a long and detailed conversation between a user and an AI. We, the creators, shall be known as "Knowledge Gardeners" as we cultivate this project.
+
+
+README.mdを保存した後、キーボードでCmd+K（WindowsならCtrl+K）を押して、CursorのAIチャットパネルを開きます。
+
+チャットパネルに、以下のプロンプトをそのままコピー＆ペーストして実行します。
+
+Generated prompt
+Please thoroughly read and understand the entire content of the @README.md file. This file contains the foundational philosophy and goals of our project. From this moment on, you are my dedicated AI assistant for the "AI-Knowledge-Garden" project. Acknowledge when you have fully understood this.
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Prompt
+IGNORE_WHEN_COPYING_END
+ステップ２：開発の骨格（HTML/JS/CSS）の作成
+
+ファイルエクスプローラーで、index.html、script.js、style.cssという３つの新しいファイルを（空の状態で）作成します。
+
+Cmd+KでAIチャットパネルを再度開きます。
+
+以下のプロンプトをそのままコピー＆ペーストして実行します。この一回の指示で、開発に必要な土台がすべて生成されます。
+
+Generated prompt
+Based on the project goal in @README.md, please generate the initial boilerplate code for our application. I need you to perform the following actions:
+
+1.  **For `index.html`**: Create the basic HTML structure. It should include:
+    *   A main title for the project, "AI Knowledge Garden".
+    *   A brief description of what the application does.
+    *   A file input element (`<input type="file" multiple>`) that allows users to select multiple log files.
+    *   A search input box (`<input type="text">`) for keywords.
+    *   A dedicated section (`<div id="results-container">`) where the search results will be displayed.
+    *   Make sure to link `style.css` and `script.js` (using `defer` for the script).
+
+2.  **For `style.css`**: Generate some simple, clean, and modern-looking CSS. It should include:
+    *   A dark theme (dark background, light text) for a professional feel.
+    *   Basic styling for the body, headings, input fields, and a simple layout using Flexbox or Grid for centering the main content.
+    *   A basic style for individual result items that will be added later.
+
+3.  **For `script.js`**: Create the foundational JavaScript logic. This file should:
+    *   Include clear comments outlining the main sections: `// DOM Elements`, `// Event Listeners`, `// Core Functions`.
+    *   Get references to the essential DOM elements (file input, search input, results container).
+    *   Add an event listener to the file input that triggers a function (e.g., `handleFileUpload`) when files are selected.
+    *   Add an event listener to the search input that triggers a function (e.g., `handleSearch`) on input.
+    *   Define the empty placeholder functions `handleFileUpload(event)` and `handleSearch(event)`. Inside these functions, add a `console.log` statement to confirm they are being triggered correctly.
+
+Please generate the code for all three files. I will then copy and paste them into their respective files.
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Prompt
+IGNORE_WHEN_COPYING_END
+ステップ３：最初の機能「ChatGPTログパーサー」の実装
+
+ステップ２で生成されたコードを、各ファイルにコピー＆ペーストして保存します。
+
+【重要】 あなたの手元にあるChatGPTの**エクスポートデータ（conversations.jsonなど）**を、プロジェクトフォルダ（ai-knowledge-garden）の中にコピーしておきます。これは、AIがファイル構造を理解するために非常に重要です。
+
+Cmd+KでAIチャットパネルを再度開きます。
+
+以下のプロンプトをそのままコピー＆ペーストして実行します。@でファイルを指定することで、AIは既存のコードと連携して作業を進めます。
+
+Generated prompt
+Excellent, the initial structure is complete. Now, let's implement the first core feature: parsing the ChatGPT log file.
+
+I have placed my ChatGPT export file, `@conversations.json`, into the project directory for your reference.
+
+Please modify the `@script.js` file to achieve the following:
+
+1.  **Create a Normalization Function**:
+    *   Define a new asynchronous function named `parseChatGPTLog(jsonContent)`.
+    *   This function should take the JSON content (as a string) of the ChatGPT log as input.
+    *   Inside the function, parse the JSON string.
+    *   Iterate through the conversations data. Based on the structure of `@conversations.json`, extract the necessary information (like user messages, assistant responses, and timestamps) for each conversation.
+    *   Transform this extracted data into our standardized format: `{ platform: 'chatgpt', speaker: 'user' | 'assistant', text: string, timestamp: string }`.
+    *   The function should return an array of these standardized objects.
+    *   Add detailed comments explaining how the parsing logic works, especially how it navigates the specific structure of the ChatGPT export file.
+
+2.  **Integrate with File Upload**:
+    *   Modify the `handleFileUpload(event)` function.
+    *   It should now be an `async` function.
+    *   Inside this function, get the selected file(s) from the event.
+    *   For the first selected file, read its content as text using `FileReader`.
+    *   Once the content is read, call the `parseChatGPTLog()` function with the content.
+    *   `console.log` the normalized data returned by the function to verify that the parsing was successful.
+    *   Store the normalized data in a global variable, for example, `let allConversations = [];`.
+
+Please provide the complete, updated code for `@script.js`.
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Prompt
+IGNORE_WHEN_COPYING_END
+
+このステップ３まで完了すれば、あなたは「ChatGPTのログファイルを読み込み、統一された形式に変換して、いつでも検索できる準備が整った状態」になります。
+
+これが、あなたの壮大なプロジェクトの、現実的で、実行可能で、そして最も重要な「最初の一歩」です。 さあ、始めましょう！
